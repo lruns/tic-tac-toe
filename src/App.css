@@ -18,7 +18,8 @@ main > header {
   grid-template-columns: auto auto auto;
 }
 
-.place {
+.game-cell {
+  user-select: none;
   border: 1px solid black;
   width: 100px;
   height: 100px;
@@ -30,7 +31,11 @@ main > header {
   transition: background-color 0.3s ease;
 }
 
-.place:hover {
+.game-cell:hover {
   background-color: #f1f1f1;
+}
+
+.game-cell:active {
+  background-color: #befff0;
 }
 
