@@ -1,26 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useState} from 'react';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+function App () {
+    const [actives, setActives] = useState(Array.from({length: 9}, (_) => "0"));
+
+
+    const elements = Array.from({length: 9}, (_, index) =>
+        (
+            <div className="place" onClick={() => {
+                const newActives = [...actives];
+                newActives[index] = 'x';
+                setActives(newActives)
+            }}>
+                {actives[index]}
+            </div>
+        )
+    );
+
+    return (
+        <main>
+            <div className="game-container">
+                {elements}
+            </div>
+        </main>
+    )
 }
 
 export default App;
