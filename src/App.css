@@ -1,6 +1,16 @@
-main {
+.container {
   display: flex;
   justify-content: center;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+}
+
+main > header {
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 .game-container {
